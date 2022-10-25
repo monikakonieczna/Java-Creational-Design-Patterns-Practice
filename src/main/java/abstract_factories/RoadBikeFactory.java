@@ -1,13 +1,15 @@
 package abstract_factories;
 
 public class RoadBikeFactory extends BikeFactory {
-    @Override
-    Tire createTire() {
-        return new RoadBikeTire();
-    }
 
     @Override
-    Handlebar createHandlebar() {
-        return new RoadBikeHandlebar();
+    BikePart create(String type) {
+        if (type.equalsIgnoreCase("tire")) {
+            return new RoadBikeTire();
+        } else if (type.equalsIgnoreCase("handlebar")) {
+            return new RoadBikeHandlebar();
+        } else {
+            return null;
+        }
     }
 }
