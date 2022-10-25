@@ -1,4 +1,4 @@
-package basic_singleton_pattern;
+package singleton_pattern_multithreading;
 
 /**
  * Examples of use cases for Singleton pattern: window manager, database connector, file manager, UI dialog, logging class, resource allocators and spoolers.
@@ -7,5 +7,10 @@ package basic_singleton_pattern;
 public class ResourceManager {
     public static void main(String[] args) {
         PrintSpooler spooler = PrintSpooler.getInstance();
+        Thread threadOne = new Thread(() -> {PrintSpooler s = PrintSpooler.getInstance();});
+        Thread threadTwo = new Thread(() -> {PrintSpooler s = PrintSpooler.getInstance();});
+
+        threadOne.start();
+        threadTwo.start();
     }
 }

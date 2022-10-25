@@ -1,6 +1,4 @@
-package complete_builder_pattern;
-
-import jdk.jshell.JShell;
+package builder_pattern_complete;
 
 import java.awt.*;
 

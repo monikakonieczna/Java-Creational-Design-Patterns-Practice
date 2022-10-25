@@ -1,4 +1,4 @@
-package complete_builder_pattern;
+package builder_pattern_complete;
 
 
 import java.awt.*;

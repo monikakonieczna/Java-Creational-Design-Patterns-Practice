@@ -1,11 +1,8 @@
-package multithreading_singleton_pattern;
+package singleton_pattern;
 
 public class PrintSpooler {
 
-    /**
-     * Example of eager initialization. PrintSpooler has been created before it is certain that will be needed.
-     */
-    private static final PrintSpooler spooler = new PrintSpooler();
+    private static PrintSpooler spooler;
     private static boolean initialized = false;
 
     private PrintSpooler(){}
@@ -14,10 +11,15 @@ public class PrintSpooler {
         // the method is empty to keep the example simple
     }
 
-    public static synchronized PrintSpooler getInstance() {
+    /**
+     * Lazy initialization of the spooler instance: the spooler object will be created only when it will be definitely going to be used.
+     * @return
+     */
+    public static PrintSpooler getInstance() {
         if (initialized) {
             return spooler;
         };
+        spooler = new PrintSpooler();
         spooler.init();
         initialized = true;
         return spooler;

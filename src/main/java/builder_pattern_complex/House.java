@@ -1,6 +1,5 @@
-package complex_builder_pattern;
+package builder_pattern_complex;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 /**
